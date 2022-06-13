@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(200, 200, 200);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* header content start */
+
+.header {
+  margin: 30px;
+}
+
+.title-hendrosetwn {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Merriweather", serif;
+  letter-spacing: 2px;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.nav-header-text {
+  font-size: 12px;
+  text-transform: capitalize;
+  font-family: "Tiro Gurmukhi", serif;
+}
+
+.nav-header-text:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* header content end */
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+/* article content start */
+
+.article {
+  flex-basis: 75%;
+  background-color: aqua;
+  font-family: "Tiro Gurmukhi", serif;
+
+}
+
+/* article content end */
+
+/* aside content start */
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 25%;
+  background-color: #195540;
+  padding: 0 15px;
+  font-family: "Tiro Gurmukhi", serif;
+
+  /* margin: 15px 0; */
+}
+
+.name {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 10px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.profile {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.subprofile {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 10px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.detail {
+  font-size: 10px;
+  font-weight: 500;
+  margin: 10px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.quote {
+  font-size: 10px;
+  font-weight: 500;
+  margin: 10px 0;
+  text-align: center;
+  color: #fff;
+  font-style: italic;
+}
+
+/* aside content end */
+
+.footer {
+    font-family: "Merriweather", serif;
+}
+
+.copyright {
+  font-size: 10px;
+  font-weight: 500;
+  margin: 10px 0;
+  text-align: center;
+  font-style: italic;
+}
