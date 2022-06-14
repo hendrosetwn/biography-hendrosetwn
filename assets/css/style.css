@@ -1,141 +1,310 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Shadows+Into+Light&display=swap");
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+:root {
+  --main-bg-color: #faf2f0;
+
+  --logo-font-family: "Shadows Into Light";
+  --title-font-family: "Playfair Display", serif;
+  --text-font-family: "IBM Plex Mono", monospace;
+
+  --big-title-color: #3b354a;
+  --small-title-color: #242424;
+  --main-text-color: #444343;
+  --sec-text-color: #6b6768;
+  --other-text-color: #a28eb2;
+
+  --title-size: 40px;
+  --subtitle-size: 17px;
+  --main-size: 16px;
+  --sec-size: 13px;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  background-color: var(--main-bg-color);
+  font-family: var(--text-font-family);
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  background-color: rgb(200, 200, 200);
-}
-
-li {
-  list-style: none;
-}
-
-a {
   text-decoration: none;
-  color: #000;
 }
 
 /* header content start */
 
 .header {
-  margin: 30px;
+  margin: 30px 100px 100px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title-hendrosetwn {
   text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 30px;
   text-align: center;
-  margin-bottom: 30px;
-  font-family: "Merriweather", serif;
-  letter-spacing: 2px;
+  font-weight: 400;
+  font-family: var(--logo-font-family);
+  color: #000;
 }
 
 .nav-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 15px;
 }
 
-.nav-header-text {
-  font-size: 12px;
-  text-transform: capitalize;
-  font-family: "Tiro Gurmukhi", serif;
+.nav-header__list {
+  margin-right: 32px;
 }
 
-.nav-header-text:hover {
-  color: rgba(0, 0, 0, 0.8);
+.nav-header__list:last-child {
+  margin-right: 0;
+}
+
+.nav-header__text {
+  font-size: var(--subtitle-size);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--small-title-color);
+}
+
+.nav-header__text:hover {
+  color: #ee7968;
 }
 
 /* header content end */
 
 .main {
   display: flex;
+  flex-direction: column;
+  margin: 30px 100px 100px 100px;
+}
+
+.biography {
+  display: flex;
   flex-direction: row;
 }
 
-/* article content start */
-
-.article {
-  flex-basis: 75%;
-  background-color: aqua;
-  font-family: "Tiro Gurmukhi", serif;
-
+.biography__section {
+  flex-basis: 65%;
+  padding-right: 100px;
 }
 
-/* article content end */
+.biography__title {
+  font-family: var(--title-font-family);
+  font-size: var(--title-size);
+  font-weight: 500;
+  color: var(--big-title-color);
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-align: left;
+}
 
-/* aside content start */
+.biography__text {
+  font-size: var(--main-size);
+  color: var(--main-text-color);
+  line-height: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
 
-.aside {
+.biography__text:last-child {
+  margin-bottom: 0px;
+}
+
+.biography__socialmedia {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.socialmedia__links {
+  font-size: var(--main-size);
+  color: var(--other-text-color);
+}
+
+.socialmedia__links:hover {
+  color: #ee7968;
+}
+
+.personal-info__aside {
+  flex-basis: 35%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-basis: 25%;
-  background-color: #195540;
-  padding: 0 15px;
-  font-family: "Tiro Gurmukhi", serif;
-
-  /* margin: 15px 0; */
 }
 
-.name {
-  font-size: 12px;
+.aside__title {
+  font-size: var(--main-size);
+  text-transform: uppercase;
+  color: var(--small-title-color);
   font-weight: 500;
-  text-transform: capitalize;
-  margin: 10px 0;
+  margin-bottom: 20px;
   text-align: center;
-  color: #fff;
 }
 
-.profile {
-  width: 100px;
+.aside__bio {
+  font-size: var(--main-size);
+  color: var(--main-text-color);
+  width: 300px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.aside__img {
+  width: 300px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
-.subprofile {
-  font-size: 10px;
-  font-weight: 500;
-  text-transform: capitalize;
-  margin: 10px 0;
+.aside__text {
+  font-size: var(--main-size);
+  color: var(--main-text-color);
+  margin-bottom: 20px;
   text-align: center;
-  color: #fff;
-}
-
-.detail {
-  font-size: 10px;
   font-weight: 500;
-  margin: 10px 0;
-  text-align: center;
-  color: #fff;
 }
 
-.quote {
-  font-size: 10px;
-  font-weight: 500;
-  margin: 10px 0;
-  text-align: center;
-  color: #fff;
-  font-style: italic;
+.aside__text > span {
+  font-weight: 400;
 }
-
-/* aside content end */
 
 .footer {
-    font-family: "Merriweather", serif;
+  margin: 100px 100px 30px 100px;
 }
 
 .copyright {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 500;
-  margin: 10px 0;
-  text-align: center;
   font-style: italic;
+  color: #242424;
 }
