@@ -1,0 +1,85 @@
+@import "../components/responsive";
+@import "../components/variables";
+
+.section-certificates {
+  margin: 0 30px 30px 30px;
+
+  @include responsive(md) {
+    margin: 0 60px 30px 60px;
+  }
+
+  @include responsive(xl) {
+    margin: 0 100px 50px 100px;
+  }
+
+  &__title {
+    font-family: $titleFamily;
+    font-size: $titleSize;
+    color: $titleColor;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 30px;
+    margin-bottom: 30px;
+
+    @include responsive(xl) {
+      margin-bottom: 50px;
+    }
+  }
+
+  & .certificates {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: $secondaryBackground;
+    padding: 30px 30px;
+    gap: 20px;
+    width: 100%;
+
+    &__img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+
+      @include responsive(md) {
+        margin-right: 20px;
+      }
+
+      @include responsive(lg) {
+        width: 75px;
+        height: 75px;
+        margin-left: 20px;
+      }
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__name {
+      font-size: $primarySize;
+      color: $primaryColor;
+      text-transform: uppercase;
+      line-height: 24px;
+
+      &:hover {
+        color: darken($primaryColor, 20%);
+      }
+    }
+
+    &__office {
+      font-size: $secondarySize;
+      color: $primaryColor;
+    }
+  }
+}

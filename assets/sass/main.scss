@@ -1,0 +1,29 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Shadows+Into+Light&display=swap");
+
+@import "./components/css.reset";
+@import "./components/variables";
+
+@import ".//pages/header";
+@import "./pages/portfolio";
+@import "./pages/biography";
+@import "./pages/expertise";
+@import "./pages/skills";
+@import "./pages/certification";
+@import "./pages/footer";
+
+* {
+  font-family: $primaryFamily;
+}
+
+body {
+  background: $primaryBackground;
+}
+
+.main {
+  margin-top: 30px;
+
+  @include responsive(xl) {
+    margin-top: 180px;
+  }
+}
