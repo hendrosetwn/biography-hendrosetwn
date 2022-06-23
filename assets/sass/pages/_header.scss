@@ -1,0 +1,136 @@
+@import "../components/responsive";
+@import "../components/variables";
+
+.header {
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background: $secondaryBackground;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+
+  @include responsive(md) {
+    padding: 30px 60px;
+  }
+
+  @include responsive(xl) {
+    padding: 50px 100px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: $logoFamily;
+    font-size: 25px;
+    color: $linkColor;
+    text-transform: uppercase;
+    text-align: left;
+    flex-grow: 2;
+
+    &:hover {
+      color: darken($linkColor, 15%);
+    }
+
+    @include responsive(md) {
+      font-size: $logoSize;
+    }
+  }
+
+  &__hamburger {
+    font-size: 30px;
+    color: $primaryColor;
+    cursor: pointer;
+    flex-grow: 2;
+    text-align: right;
+
+    @include responsive(xl) {
+      display: none;
+      flex-grow: 1;
+    }
+
+    &:hover {
+      color: lighten($primaryColor, 30%);
+    }
+  }
+
+  &__nav {
+    display: none;
+    flex-grow: 1;
+    width: 375px;
+    padding-top: 20px;
+
+    @include responsive(md) {
+      width: 768px;
+    }
+
+    @include responsive(lg) {
+      width: 1024px;
+    }
+
+    @include responsive(xl) {
+      flex-grow: 2;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0;
+    }
+  }
+
+  &__nav.active {
+    display: block;
+
+    @include responsive(xl) {
+      display: flex;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+
+    @include responsive(xl) {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__text {
+    font-size: $primarySize;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $primaryColor;
+    font-family: $primaryFamily;
+    padding: 5px 10px;
+
+    @include responsive(xl) {
+      border: 1px solid $secondaryBackground;
+    }
+
+    &.active {
+      border-color: lighten($primaryColor, 20%);
+      color: lighten($primaryColor, 30%);
+
+      @include responsive(xl) {
+        border: 1px solid $primaryColor;
+        margin-right: 0;
+      }
+    }
+
+    &:hover {
+      color: lighten($primaryColor, 30%);
+      border-color: lighten($primaryColor, 20%);
+      margin-right: 5px;
+
+      @include responsive(xl) {
+        margin-right: 0;
+      }
+    }
+  }
+}

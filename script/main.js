@@ -25,28 +25,54 @@ function scrollFunction() {
 
 // show/close task Start
 
-let buttonOpen = document.querySelectorAll(".expertise__btn--open");
-let buttonClose = document.querySelectorAll(".expertise__btn--close");
-let hehe = document.getElementById("skills").firstElementChild;
+let buttonGenerate = document.querySelectorAll(".expertise__btn");
+let show = document.querySelectorAll(".eye-show");
+let hidden = document.querySelectorAll(".eye-hide");
+let task = document.querySelectorAll(".expertise__task");
+let line = document.querySelectorAll(".expertise__line");
 
-for (let i = 0; i < buttonOpen.length; i++) {
-  buttonOpen[i].addEventListener("click", (e) => {
-    buttonOpen[i].style.display = "none";
-    buttonClose[i].style.display = "block";
-
-    e.target.parentElement.nextElementSibling.nextElementSibling.style.display =
-      "none";
-  });
-}
-
-for (let i = 0; i < buttonClose.length; i++) {
-  buttonClose[i].addEventListener("click", (e) => {
-    buttonClose[i].style.display = "none";
-    buttonOpen[i].style.display = "block";
-
-    e.target.parentElement.nextElementSibling.nextElementSibling.style.display =
-      "block";
+for (let i = 0; i < buttonGenerate.length; i++) {
+  buttonGenerate[i].addEventListener("click", (e) => {
+    show[i].classList.toggle("active");
+    hidden[i].classList.toggle("active");
+    task[i].classList.toggle("active");
+    line[i].classList.toggle("active");
   });
 }
 
 // show/close task End
+
+// hamburger menu Start
+let hamburger = document.querySelector(".header__hamburger");
+hamburger.addEventListener("click", (e) => {
+  let text = document.querySelectorAll(".header__list");
+  let nav = document.querySelector(".header__nav");
+  nav.classList.toggle("active");
+});
+
+// hamburger menu End
+
+// sticky nav Start
+
+let navbar = document.querySelector(".header__nav");
+let viewportHeight = window.innerHeight;
+let navHeight = navbar.offsetHeight;
+
+let navbarLinks = document.querySelectorAll(".header__text");
+
+window.addEventListener("scroll", (e) => {
+  scrollpos = window.scrollY;
+  navbarLinks.forEach((link) => {
+    let section = document.querySelector(link.hash);
+    if (
+      section.offsetTop <= scrollpos + 150 &&
+      section.offsetTop + section.offsetHeight > scrollpos + 150
+    ) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+});
+
+// sticky nav End

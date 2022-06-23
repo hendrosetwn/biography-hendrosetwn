@@ -1,0 +1,74 @@
+@import "../components/responsive";
+@import "../components/variables";
+
+.footer {
+  margin: 0 30px 30px 30px;
+
+  @include responsive(md) {
+    margin: 0 60px 30px 60px;
+  }
+
+  @include responsive(xl) {
+    margin: 0 100px 50px 100px;
+  }
+  &__title {
+    font-family: $titleFamily;
+    font-size: $titleSize;
+    color: $titleColor;
+    font-weight: 700;
+    letter-spacing: 1px;
+    min-width: 320px;
+    max-width: 420px;
+    text-transform: capitalize;
+    text-align: left;
+    margin-bottom: 30px;
+    line-height: 55px;
+  }
+
+  &__email {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-family: $primaryFamily;
+    font-size: $primarySize;
+    color: $primaryColor;
+    text-transform: uppercase;
+    line-height: 20px;
+  }
+
+  &__links {
+    font-family: $primaryFamily;
+    font-size: $primarySize;
+    color: $linkColor;
+    line-height: 20px;
+  }
+
+  &__copyright {
+    font-family: $primaryFamily;
+    font-size: $secondarySize;
+    color: $secondaryColor;
+    font-style: italic;
+  }
+
+  &__btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background: none;
+  }
+
+  &__btn > i {
+    font-size: $titleSize;
+    color: $titleColor;
+    cursor: pointer;
+
+    &:hover {
+      color: darken($titleColor, 10%);
+    }
+  }
+}

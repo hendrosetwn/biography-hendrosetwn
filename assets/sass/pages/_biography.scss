@@ -1,0 +1,141 @@
+@import "../components/responsive";
+@import "../components/variables";
+
+.section-bio {
+  margin: 30px 30px;
+
+  @include responsive(md) {
+    margin: 30px 60px;
+  }
+
+  @include responsive(xl) {
+    margin: 50px 100px;
+  }
+
+  &__title {
+    font-family: $titleFamily;
+    font-size: $titleSize;
+    color: $titleColor;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include responsive(md) {
+      gap: 50px;
+    }
+
+    @include responsive(lg) {
+      flex-direction: row;
+      gap: 100px;
+    }
+
+    @include responsive(xl) {
+      gap: 150px;
+    }
+
+    .biography {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      &__text {
+        font-size: $primarySize;
+        color: $primaryColor;
+        line-height: 24px;
+        margin-bottom: 20px;
+      }
+
+      &__text:last-child {
+        margin-bottom: 0px;
+      }
+
+      &__socialmedia {
+        display: none;
+
+        @include responsive(lg) {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          background-color: $secondaryBackground;
+          margin-bottom: 20px;
+          padding: 20px 40px;
+        }
+      }
+
+      &__socialmedia.mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background-color: $secondaryBackground;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+
+        @include responsive(lg) {
+          display: none;
+        }
+      }
+
+      &__links {
+        font-size: $primarySize;
+        color: $linkColor;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        &:hover {
+          color: darken($linkColor, 20%);
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__img {
+        width: 200px;
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: 20px;
+
+        @include responsive(lg) {
+          width: 250px;
+          height: auto;
+          border-radius: 50%;
+          margin-bottom: 20px;
+        }
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: $primarySize;
+        color: $primaryColor;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+
+        & > span {
+          font-weight: 400;
+          text-transform: capitalize;
+        }
+
+        &:nth-child(4) > span {
+          text-transform: lowercase;
+        }
+      }
+    }
+  }
+}

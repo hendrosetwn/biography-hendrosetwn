@@ -1,0 +1,89 @@
+@import "../components/responsive";
+@import "../components/variables";
+
+.section-skills {
+  margin: 0 30px 30px 30px;
+
+  @include responsive(md) {
+    margin: 0 60px 30px 60px;
+  }
+
+  @include responsive(xl) {
+    margin: 0 100px 50px 100px;
+  }
+
+  &__title {
+    font-family: $titleFamily;
+    font-size: $titleSize;
+    color: $titleColor;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 30px;
+    margin-bottom: 30px;
+
+    @include responsive(md) {
+    }
+
+    @include responsive(lg) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+
+    @include responsive(xl) {
+      margin-bottom: 50px;
+    }
+  }
+
+  & .skills {
+    display: flex;
+    flex-direction: column;
+    background-color: $secondaryBackground;
+    padding: 30px 30px;
+
+    @include responsive(lg) {
+      min-width: 420px;
+      max-width: 594px;
+      flex-grow: 20;
+    }
+
+    @include responsive(xl) {
+      min-width: 595px;
+    }
+
+    &__name {
+      font-size: $primarySize;
+      color: $primaryColor;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: $primarySize;
+      color: $primaryColor;
+      line-height: 24px;
+      width: 100%;
+      flex-grow: 50;
+    }
+  }
+}
