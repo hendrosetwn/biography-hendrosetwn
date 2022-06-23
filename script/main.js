@@ -1,6 +1,6 @@
 // button Fixed Start
 
-let buttonFixed = document.querySelector(".btn__fixed");
+let buttonFixed = document.querySelector(".footer__btn");
 buttonFixed.addEventListener("click", () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
